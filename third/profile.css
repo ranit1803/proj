@@ -1,0 +1,55 @@
+/* Styles for the navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #fff;
+    margin-right: 20px;
+}
+
+/* Styles for the profile section */
+#profile {
+    text-align: center;
+    margin: 20px;
+}
+
+#profile img {
+    max-width: 200px;
+    border: 5px solid #fff;
+    border-radius: 50%;
+}
+
+#profile button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+/* Styles for the clickable headings */
+.clickable {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+/* Styles for the edit username and sign-out buttons */
+#edit-username, #sign-out {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+#edit-username:hover, #sign-out:hover {
+    background-color: #555;
+}

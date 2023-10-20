@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="profile.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <style>
+        /* Add your CSS styles for the profile here */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+        }
+        .navbar a {
+            text-decoration: none;
+            color: #fff;
+            margin-right: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="#">Home</a>
+        <a href="#">Contact Us</a>
+    </div>
+    
+    <div id="profile">
+        <img src="pfp.jpg" alt="Profile Picture">
+        <button id="edit-profile-pic">Edit Profile Picture</button>
+        <h1 id="username">John Doe</h1>
+        <h2 id="organized-events-heading" class="clickable">Events Organized</h2>
+        <ul id="organized-events" style="display: none">
+            <li>Event 1</li>
+            <li>Event 2</li>
+            <li>Event 3</li>
+        </ul>
+        <h2 id="participated-events-heading" class="clickable">Events Participated</h2>
+        <ul id="participated-events" style="display: none">
+            <li>Event A</li>
+            <li>Event B</li>
+            <li>Event C</li>
+        </ul>
+        <button id="edit-username">Edit Username</button>
+        <button id="sign-out">Sign Out</button>
+    </div>
+
+    <script>
+        // JavaScript to toggle visibility of event lists
+        const organizedEventsHeading = document.getElementById('organized-events-heading');
+        const organizedEventsList = document.getElementById('organized-events');
+        organizedEventsHeading.addEventListener('click', () => {
+            organizedEventsList.style.display = organizedEventsList.style.display === 'none' ? 'block' : 'none';
+        });
+
+        const participatedEventsHeading = document.getElementById('participated-events-heading');
+        const participatedEventsList = document.getElementById('participated-events');
+        participatedEventsHeading.addEventListener('click', () => {
+            participatedEventsList.style.display = participatedEventsList.style.display === 'none' ? 'block' : 'none';
+        });
+        
+        // JavaScript to handle editing the profile picture
+        const editProfilePicButton = document.getElementById('edit-profile-pic');
+        editProfilePicButton.addEventListener('click', () => {
+            // Add code to handle profile picture editing here
+        });
+    </script>
+</body>
+</html>

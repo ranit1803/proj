@@ -1,0 +1,99 @@
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Set a background color and text styles for the entire page */
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Style the header with a background color and centered text */
+header {
+    background-color: #3498db;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Style the navigation bar with a background color and links */
+nav {
+    text-align: center;
+    background-color: #333;
+    padding: 10px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    margin: 10px;
+}
+
+/* Style each section with padding and centered text */
+section {
+    padding: 20px;
+    text-align: center;
+}
+
+/* Style the registration button */
+#registration-button {
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+#registration-button:hover {
+    background-color: #2980b9;
+}
+
+/* Style the form */
+#registration-form {
+    display: none; /* Initially hide the form */
+    margin: 20px;
+    text-align: center;
+}
+
+/* Style the image in the overview section */
+img {
+    float: right;
+    max-width: 300px;
+}
+
+/* Style the FAQ questions and answers */
+#faqs p {
+    text-align: left;
+}
+
+/* Add more CSS styles as needed for the rest of your content */
+/* Style the form labels and input fields */
+form label {
+    display: block;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+form input[type="text"],
+form input[type="number"],
+form button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+}
+
+/* Style the FAQs section */
+#faqs {
+    text-align: left;
+}
+
+#faqs strong {
+    color: #3498db;
+}
+
+/* Style the Contact Us section */
+/* Add your own styles for contact information as needed */
+
+/* Add any additional CSS styles based on your design requirements */

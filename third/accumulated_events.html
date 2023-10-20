@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <div id="nav">
+        <div class="navbar">
+            <div class="company-name">DEO</div>
+            <div class="middle-links">
+                <a href="#">HACKATHONS</a> |      
+                <a href="#">PROFILE</a>
+            </div>
+            <div class="about-us">
+                <a href="#">CONTACT US</a>
+            </div>
+        </div>
+       </div>
+
+    <div class="carousel">
+        <div class="carousel-item">
+            <div class="carousel-box">
+                <div class="title">Lunatic Byte</div>
+                <div class="num">01</div>
+                <button>Jam In</button>
+                <img src="" alt="">
+            </div>
+        </div>
+    
+        <div class="carousel-item">
+            <div class="carousel-box">
+                <div class="title">Geek Navi</div>
+                <div class="num">02</div>
+                <button>Jam In</button>
+            </div>
+        </div>
+    
+        <div class="carousel-item">
+            <div class="carousel-box">
+                <div class="title">Link Clowns</div>
+                <div class="num">03</div>
+                <button>Jam In</button>
+            </div>
+        </div>
+    
+        <div class="carousel-item">
+            <div class="carousel-box">
+                <div class="title">Byte Karma</div>
+                <div class="num">04</div>
+                <button>Jam In</button>
+            </div>
+        </div>
+    
+        <div class="carousel-item">
+            <div class="carousel-box">
+                <div class="title">Cobra Tech</div>
+                <div class="num">05</div>
+                <button>Jam In</button>
+            </div>
+        </div>
+    
+        <div class="carousel-item">
+            <div class="carousel-box">
+                <div class="title">Pandora Reboot</div>
+                <div class="num">06</div>
+                <button>Jam In</button>
+            </div>
+        </div>
+    
+        <div class="carousel-item">
+            <div class="carousel-box">
+                <div class="title">Hat Static</div>
+                <div class="num">07</div>
+                <button>Jam In</button>
+            </div>
+        </div>
+    
+        <div class="carousel-item">
+            <div class="carousel-box">
+                <div class="title">Binary Fetch</div>
+                <div class="num">08</div>
+                <button>Jam In</button>
+            </div>
+        </div>
+    
+        <div class="carousel-item">
+            <div class="carousel-box">
+                <div class="title">Byte Bites</div>
+                <div class="num">09</div>
+                <button>Jam In</button>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="carousel-box">
+                <div class="title">1h3 9/11</div>
+                <div class="num">10</div>
+                <button>Jam In</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="layout">
+        <div class="box">High-end, full-service<br />visual content creation<br />for lifestyle branding.</div>
+    </div>
+    
+    </div>
+    <script>
+let progress = 50
+let startX = 0
+let active = 0
+let isDown = false
+const speedWheel = 0.02
+const speedDrag = -0.1
+const getZindex = (array, index) => (array.map((_, i) => (index === i) ? array.length : array.length - Math.abs(index - i)))
+const $items = document.querySelectorAll('.carousel-item')
+const $cursors = document.querySelectorAll('.cursor')
+
+const displayItems = (item, index, active) => {
+  const zIndex = getZindex([...$items], active)[index]
+  item.style.setProperty('--zIndex', zIndex)
+  item.style.setProperty('--active', (index-active)/$items.length)
+}
+const animate = () => {
+  progress = Math.max(0, Math.min(progress, 100))
+  active = Math.floor(progress/100*($items.length-1))
+  
+  $items.forEach((item, index) => displayItems(item, index, active))
+}
+animate()
+$items.forEach((item, i) => {
+  () => {
+    progress = (i/$items.length) * 100 + 10
+    animate()
+  }
+})
+const handleWheel = e => {
+  const wheelProgress = e.deltaY * speedWheel
+  progress = progress + wheelProgress
+  animate()
+}
+
+const handleMouseMove = (e) => {
+  if (e.type === 'mousemove') {
+    $cursors.forEach(($cursor) => {
+      $cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`
+    })
+  }
+  if (!isDown) return
+  const x = e.clientX || (e.touches && e.touches[0].clientX) || 0
+  const mouseProgress = (x - startX) * speedDrag
+  progress = progress + mouseProgress
+  startX = x
+  animate()
+}
+
+const handleMouseDown = e => {
+  isDown = true
+  startX = e.clientX || (e.touches && e.touches[0].clientX) || 0
+}
+
+const handleMouseUp = () => {
+  isDown = false
+}
+document.addEventListener('mousewheel', handleWheel)
+document.addEventListener('mousedown', handleMouseDown)
+document.addEventListener('mousemove', handleMouseMove)
+document.addEventListener('mouseup', handleMouseUp)
+document.addEventListener('touchstart', handleMouseDown)
+document.addEventListener('touchmove', handleMouseMove)
+document.addEventListener('touchend', handleMouseUp)
+    </script>
+    
+    <div class="cursor"></div>
+    <div class="cursor cursor2"></div>
+</body>
+</html>

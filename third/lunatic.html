@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lunatic Bytes</title>
+    <link rel="stylesheet" href="lunatic.css">
+    <style>
+        /* Add your CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #3498db;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+        nav {
+            text-align: center;
+            background-color: #333;
+            padding: 10px;
+        }
+        nav a {
+            text-decoration: none;
+            color: #fff;
+            margin: 10px;
+        }
+        section {
+            padding: 20px;
+            text-align: center;
+        }
+        form {
+            display: none; /* Initially hide the form */
+            margin: 20px;
+            text-align: center;
+        }
+        #registration-button {
+            display: inline-block; /* Show the button */
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        #registration-button:hover {
+            background-color: #2980b9;
+        }
+        #registration-form {
+            display: none; /* Initially hide the form */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Lunatic Bytes</h1>
+    </header>
+    
+    <nav>
+        <a href="#overview">Overview</a>
+        <a href="#schedule">Schedule</a>
+        <a href="#prize-pool">Price Pool</a>
+        <a href="#team-registration">Team Registration</a>
+    </nav>
+    
+    <section id="overview">
+        <h2>Overview</h2>
+        <img src="logo.jpeg" alt="Overview Image" style="float: right; max-width: 300px;">
+        <p>The Lunatic Bytes hackathon is a great opportunity to learn new skills, meet new people, and build something cool. The hackathon is open to anyone who is interested in participating, regardless of their skill level or experience.</p>
+        <p>The hackathon will focus on a variety of topics, including software development, hardware development, and design. There will be prizes for the best projects, and there will be opportunities to network with other attendees.</p>
+        <p>If you are interested in learning new skills, meeting new people, and building something cool, then you should attend the Lunatic Bytes hackathon.</p>
+    </section>
+    
+    <section id="schedule">
+        <h2>Schedule</h2>
+        <p>Date: November 15, 2023</p>
+    </section>
+    
+    <section id="prize-pool">
+        <h2>Price Pool</h2>
+        <p>$45,000</p>
+    </section>
+    
+    <button id="registration-button">Team Registration</button>
+    
+    <form id="registration-form">
+        <h2>Team Registration</h2>
+        <label for="teamName">Team Name:</label>
+        <input type="text" id="teamName" name="teamName" required>
+        <br>
+        <label for="teamSize">Team Size:</label>
+        <input type="number" id="teamSize" name="teamSize" required>
+        <br>
+        <button type="submit">Apply</button>
+    </form>
+    
+    <section id="faqs">
+        <h2>FAQs</h2>
+        <p><strong>Q: Is this a 24-hour hackathon?</strong></p>
+        <p><strong>A: Yes, it is a 24-hour hackathon.</strong></p>
+    </section>
+    
+    <section>
+        <h2>Contact Us</h2>
+        <!-- Add your contact information here -->
+    </section>
+    
+    <script>
+        // JavaScript to show/hide the registration form when the button is clicked
+        document.getElementById("registration-button").addEventListener("click", function () {
+            var registrationForm = document.getElementById("registration-form");
+            registrationForm.style.display = (registrationForm.style.display === "block") ? "none" : "block";
+        });
+    </script>
+</body>
+</html>
